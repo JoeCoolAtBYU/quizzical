@@ -1,10 +1,10 @@
 import './App.css';
-import WelcomPage from "./components/QuizPage";
+import WelcomePage from "./components/WelcomePage";
 
 function App() {
   return (
     <div className="App">
-      <WelcomPage start={()=>{console.log(`Game started`)}}/>
+      <WelcomePage start={()=>{console.log(`Game started`)}}/>
     </div>
   );
 }
