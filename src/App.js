@@ -1,10 +1,19 @@
 import './App.css';
 import WelcomePage from "./components/WelcomePage";
+import QuizPage from "./components/QuizPage";
+import {useState} from "react";
 
 function App() {
+  const [isStarted, setIsStarted] = useState(false)
+
+  function startGame() {
+    setIsStarted(!isStarted);
+  }
+
   return (
     <div className="App">
-      <WelcomePage start={()=>{console.log(`Game started`)}}/>
+      {!isStarted ? <WelcomePage start={startGame}/> :
+        <QuizPage/>}
     </div>
   );
 }
