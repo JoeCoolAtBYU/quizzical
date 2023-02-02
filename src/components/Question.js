@@ -1,17 +1,19 @@
-import './styles/QuestionsPage.css'
+import './styles/Question.css'
+import AnswerButton from "./AnswerButton";
 
 export default function Question(props) {
   let rawquestion = JSON.stringify(decodeURIComponent(props.question));
   let question = rawquestion.replace(/\\/g, "");
   return (
-    <div className={`questionPage`}>
-      <div className={`questions`}>
+      <div className="question">
         <h4>{question}</h4>
-        <button>button1</button>
-        <button>button2</button>
-        <button>button3</button>
-        <button>button4</button>
-      </div>
+        <div className="answers">
+          <AnswerButton answer="This is a test as longer test"/>
+          <AnswerButton answer="This "/>
+          <AnswerButton answer="This is"/>
+          <AnswerButton answer="This is a"/>
+          <AnswerButton answer="This is a test"/>
+        </div>
     </div>
   )
 

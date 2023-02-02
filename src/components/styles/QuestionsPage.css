@@ -8,6 +8,10 @@
     overflow: hidden;
 }
 
-.question {
+.question-container {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    padding: 0 5%;
 
 }

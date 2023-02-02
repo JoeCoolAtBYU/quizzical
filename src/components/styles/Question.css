@@ -1,0 +1,14 @@
+.question{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+.answers{
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
