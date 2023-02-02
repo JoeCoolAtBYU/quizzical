@@ -18,6 +18,8 @@
     align-items: center;
     flex-direction: column;
     scroll-behavior: unset;
+
+    overflow: hidden;
 }
 
 
