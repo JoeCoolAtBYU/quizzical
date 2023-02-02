@@ -5,6 +5,15 @@
     padding: 0 5%;
 }
 
+p.question{
+    font-family: 'Karla', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    color: #293264;
+}
+
 .answers{
     padding-left: 20px;
     padding-right: 20px;

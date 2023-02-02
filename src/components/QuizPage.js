@@ -2,6 +2,7 @@ import BabyBlue from "../images/blue.svg";
 import Yellow from "../images/yellow.svg";
 import {useState, useEffect} from "react";
 import Question from "./Question";
+import "./styles/QuizPage.css"
 
 export default function QuizPage(){
   const[quizQuestions, setQuizQuestions] = useState([])
@@ -18,7 +19,7 @@ export default function QuizPage(){
 
 
   const questions = quizQuestions.map(question => {
-    return (<Question question={question.question}/>)
+    return (<div><Question question={question}/><hr/></div>)
   })
 
   return(
@@ -30,11 +31,13 @@ export default function QuizPage(){
         <img src={Yellow} alt={`blue asymetrical shape`}/>
       </span>
       <span className="blob2"/>
-      <h1>Quiz Page</h1>
       <div className={`question-container`}>
         {questions}
       </div>
+      <div className="checkAnswersBtn">Check Answers</div>
+
     </div>
+
 
   )
 
