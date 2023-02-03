@@ -5,6 +5,19 @@
     padding: 0 5%;
 }
 
+.selected{
+    background-color: #D6DBF5;
+}
+
+.correct{
+    background-color: #94D7A2;
+}
+
+.incorrect{
+    background-color: #F8BCBC;
+
+}
+
 p.question{
     font-family: 'Karla', sans-serif;
     font-style: normal;
