@@ -1,28 +1,59 @@
 import BabyBlue from "../images/blue.svg";
 import Yellow from "../images/yellow.svg";
-import {useState, useEffect} from "react";
+import {useEffect, useState} from "react";
 import Question from "./Question";
 import "./styles/QuizPage.css"
+import {nanoid} from "nanoid";
 
-export default function QuizPage(){
-  const[quizQuestions, setQuizQuestions] = useState([])
+export default function QuizPage() {
+  const [quizQuestions, setQuizQuestions] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&encode=url3986")
       .then((response) => response.json())
       .then((questions) => {
-        console.log(questions.results)
-        setQuizQuestions(questions.results)
+        setQuizQuestions(questions.results.map(question => {
+          return (
+            {
+              id: nanoid(),
+              question: question.question,
+              answers: question.incorrect_answers.concat([question.correct_answer]).map(value => ({value, sort: Math.random()})).sort(
+                (a, b) => a.sort - b.sort).map(({value}) => value),
+              selectedAnswer: undefined,
+              correctAnswer: question.correct_answer
+            }
+          )
+        }))
       })
 
   }, [])
 
+  function selectAnswer(event,quest_id, option_id){
+    setQuizQuestions(prev =>{
+      return(prev.map(function (quest,qid){
+        if(quest_id===quest.id){
+          return({...quest, selectedAnswer:option_id})
+        } else {
+          return (quest)
+        }
+      }))
+    })
+  }
 
   const questions = quizQuestions.map(question => {
-    return (<div><Question question={question}/><hr/></div>)
+    let keyId = nanoid();
+    return (<div>
+      <Question
+        key={keyId}
+        question={question}
+        showAnswers={false}
+        selectAnswer={selectAnswer}
+      />
+      <hr/>
+    </div>)
   })
 
-  return(
+  return (
     <div className="main">
       <span id="clip" className="blob">
         <img src={BabyBlue} alt={`blue asymmetrical shape`}/>

@@ -2,7 +2,55 @@ import './styles/Question.css'
 import AnswerButton from "./AnswerButton";
 
 export default function Question(props) {
-  let rawquestion = decodeString(props.question.question);
+
+  function styles(answer, index) {
+    if (props.showAnswers === true) {
+      if (props.question.correctAnswer === answer) {
+        return ({backgroundColor: "#94D7A2"})
+      }
+      else if (props.question.selectedAnswer === index) {
+        return ({backgroundColor: "#F8BCBC"})
+      }
+      else {
+        return ({backgroundColor: "#F5F7FB"})
+      }
+    }
+    else {
+      return (props.question.selectedAnswer === index ? {backgroundColor: "#D6DBF5"} : {backgroundColor: "#F5F7FB"})
+    }
+  }
+
+
+  console.log(props.question)
+  const answerButtons = props.question.answers.map((answer, index) => {
+    return (<AnswerButton
+        key={index}
+        answer={decodeString(answer)}
+        onClick={(event) => props.selectAnswer(event, props.question.id, index)}
+        style={styles(answer, index)}
+        disabled={props.showAnswers}
+      />
+    )
+
+  })
+
+  function decodeString(string){
+    return JSON.stringify(decodeURIComponent(string)).replaceAll("\"", "")
+      .replaceAll("\\", "\"");
+  }
+
+  return (
+    <div className="question">
+      <p>{decodeString(props.question.question)}</p>
+      <div className="answers">
+        {answerButtons}
+      </div>
+    </div>
+  )
+
+}
+
+/*let rawquestion = decodeString(props.question.question);
   let question = rawquestion.replace(/\\/g, "");
 
   let incorrectAnswers = (props.question.incorrect_answers).map(item => {
@@ -30,21 +78,4 @@ export default function Question(props) {
         newArray[randomIndex], newArray[currentIndex]];
     }
     return newArray;
-  }
-
-  const answerButtons = allAnswers.map(answer => {
-    return (
-      <AnswerButton answer={answer.answer} isCorrect={answer.isCorrect} />
-    )
-  })
-
-  return (
-    <div className="question">
-     <p>{question}</p>
-      <div className="answers">
-        {answerButtons}
-      </div>
-    </div>
-  )
-
-}
+  }*/

@@ -2,11 +2,9 @@ import "./styles/AnswerButton.css"
 import {useState} from "react";
 
 export default function AnswerButton(props){
-  const[isCorrect, setIsCorrect] = useState(props.isCorrect);
-
 
   return(
-    <div className="answerButton">
+    <div onClick={props.onClick} style={props.style} className="answerButton">
       {props.answer}
     </div>
 
