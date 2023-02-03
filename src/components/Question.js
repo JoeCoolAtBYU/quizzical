@@ -20,13 +20,13 @@ export default function Question(props) {
     }
   }
 
-
-  console.log(props.question)
   const answerButtons = props.question.answers.map((answer, index) => {
     return (<AnswerButton
         key={index}
         answer={decodeString(answer)}
-        onClick={(event) => props.selectAnswer(event, props.question.id, index)}
+        onClick={(event) => {
+          props.selectAnswer(event, props.question.id, index)
+        }}
         style={styles(answer, index)}
         disabled={props.showAnswers}
       />

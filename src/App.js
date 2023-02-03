@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       {!isStarted ? <WelcomePage start={startGame}/> :
-        <QuizPage/>}
+        <QuizPage />}
     </div>
   );
 }

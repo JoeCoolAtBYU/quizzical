@@ -35,20 +35,43 @@
 }
 
 .checkAnswersBtn{
-    position: relative;
-    width: 120px;
-    height: 20px;
-    top: 30px;
-    padding: 5px;
-    background: #4D5B9E;
-    border-radius: 10px;
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 10.24px;
-    /*line-height: 12px;*/
+    font-size: 12px;
     text-align: center;
+
     color: #F5F7FB;
+
+    position: relative;
+    width: 120px;
+    height: 35px;
+    top: 30px;
+    border-radius: 10px;
+    background: #4D5B9E;
+    border: 1px;
+    align-self: center;
+}
+.checkAnswersBtn:disabled{
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+
+    color: #F5F7FB;
+
+    opacity: 50%;
+
+    width: 120px;
+    height: 35px;
+    background: #4D5B9E;
+    border-radius: 10px;
+
+    border: 1px;
+
+    align-self: center;
 }
 
 hr {
@@ -61,3 +84,5 @@ hr {
     border: 0.794239px solid #DBDEF0;
     transform: rotate(-0.05deg);
 }
+
+

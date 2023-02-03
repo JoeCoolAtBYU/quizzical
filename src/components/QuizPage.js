@@ -7,6 +7,8 @@ import {nanoid} from "nanoid";
 
 export default function QuizPage() {
   const [quizQuestions, setQuizQuestions] = useState([])
+  const [complete, setComplete] = useState(false)
+  const [showAnswers, setShowAnswers] = useState(false)
 
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5&encode=url3986")
@@ -28,6 +30,15 @@ export default function QuizPage() {
 
   }, [])
 
+  useEffect(()=>{
+    setComplete(quizQuestions.every(quest => {
+      return typeof quest.selectedAnswer !== 'undefined'}))
+  }, [quizQuestions])
+
+  function checkAnswers() {
+    setShowAnswers(true)
+  }
+
   function selectAnswer(event,quest_id, option_id){
     setQuizQuestions(prev =>{
       return(prev.map(function (quest,qid){
@@ -46,7 +57,7 @@ export default function QuizPage() {
       <Question
         key={keyId}
         question={question}
-        showAnswers={false}
+        showAnswers={showAnswers}
         selectAnswer={selectAnswer}
       />
       <hr/>
@@ -65,7 +76,7 @@ export default function QuizPage() {
       <div className={`question-container`}>
         {questions}
       </div>
-      <div className="checkAnswersBtn">Check Answers</div>
+      <button className="checkAnswersBtn" disabled={!complete} onClick={checkAnswers}>Check Answers</button>
 
     </div>
 
