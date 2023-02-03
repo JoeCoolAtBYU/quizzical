@@ -25,10 +25,10 @@ export default function QuizPage(){
   return(
     <div className="main">
       <span id="clip" className="blob">
-        <img src={BabyBlue} alt={`blue asymetrical shape`}/>
+        <img src={BabyBlue} alt={`blue asymmetrical shape`}/>
       </span>
       <span className="blob2">
-        <img src={Yellow} alt={`blue asymetrical shape`}/>
+        <img src={Yellow} alt={`blue asymmetrical shape`}/>
       </span>
       <span className="blob2"/>
       <div className={`question-container`}>
