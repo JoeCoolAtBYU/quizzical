@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import Question from "./Question";
 import "./styles/QuizPage.css"
 import {nanoid} from "nanoid";
+import Loading from "./Loading";
 
 export default function QuizPage(props) {
   const [quizQuestions, setQuizQuestions] = useState([])
@@ -88,30 +89,31 @@ export default function QuizPage(props) {
     </div>)
   })
 
-  return (
-    <div className="main">
+  if (quizQuestions.length === 0) {
+    return <Loading/>;
+  }
+  else {
+    return (
+      <div className="main">
       <span id="clip" className="blob">
         <img src={BabyBlue} alt={`blue asymmetrical shape`}/>
       </span>
-      <span className="blob2">
+        <span className="blob2">
         <img src={Yellow} alt={`blue asymmetrical shape`}/>
       </span>
-      <span className="blob2"/>
-      <div className={`question-container`}>
-        {questions}
-      </div>
-      {showAnswers ?
-        <div>
-          <h3 className="score"> {`You scored ${score} / 5 correct answers.`}</h3>
-          <button className={"button"} onClick={playAgain}>Play Again</button>
+        <span className="blob2"/>
+        <div className={`question-container`}>
+          {questions}
         </div>
-
-        : <button className="checkAnswersBtn" disabled={!complete} onClick={checkAnswers}>Check Answers</button>
-      }
-
-    </div>
-
-
-  )
+        {showAnswers ?
+          <div>
+            <h3 className="score"> {`You scored ${score} / 5 correct answers.`}</h3>
+            <button className={"button"} onClick={playAgain}>Play Again</button>
+          </div>
+          : <button className="checkAnswersBtn" disabled={!complete} onClick={checkAnswers}>Check Answers</button>
+        }
+      </div>
+    )
+  }
 
 }
