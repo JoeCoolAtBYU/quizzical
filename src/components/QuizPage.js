@@ -98,10 +98,7 @@ export default function QuizPage(props) {
       <span id="clip" className="blob">
         <img src={BabyBlue} alt={`blue asymmetrical shape`}/>
       </span>
-        <span className="blob2">
-        <img src={Yellow} alt={`blue asymmetrical shape`}/>
-      </span>
-        <span className="blob2"/>
+
         <div className={`question-container`}>
           {questions}
         </div>
@@ -112,6 +109,10 @@ export default function QuizPage(props) {
           </div>
           : <button className="checkAnswersBtn" disabled={!complete} onClick={checkAnswers}>Check Answers</button>
         }
+
+        <span className="blob2">
+        <img src={Yellow} alt={`blue asymmetrical shape`}/>
+      </span>
       </div>
     )
   }
