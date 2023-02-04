@@ -48,7 +48,7 @@ export default function QuizPage(props) {
       }
     }
     setScore(count);
-  }, [showAnswers])
+  }, [showAnswers, quizQuestions])
 
 
   function checkAnswers() {
@@ -57,7 +57,7 @@ export default function QuizPage(props) {
 
   function selectAnswer(event, quest_id, option_id) {
     setQuizQuestions(prev => {
-      return (prev.map(function (quest, qid) {
+      return (prev.map(function (quest) {
         if (quest_id === quest.id) {
           return ({...quest, selectedAnswer: option_id})
         }
