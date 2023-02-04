@@ -34,7 +34,7 @@
 
 }
 
-.checkAnswersBtn{
+.checkAnswersBtn, button{
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -52,6 +52,20 @@
     border: 1px;
     align-self: center;
 }
+
+.results{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+}
+
+.score{
+    position: relative;
+    top: 30px
+
+}
+
 .checkAnswersBtn:disabled{
 
     font-family: 'Inter', sans-serif;

@@ -106,7 +106,7 @@ export default function QuizPage(props) {
           {questions}
         </div>
         {showAnswers ?
-          <div>
+          <div className={"results"}>
             <h3 className="score"> {`You scored ${score} / 5 correct answers.`}</h3>
             <button className={"button"} onClick={playAgain}>Play Again</button>
           </div>
