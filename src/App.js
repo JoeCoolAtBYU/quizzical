@@ -12,8 +12,8 @@ function App() {
 
   return (
     <div className="App">
-      {!isStarted ? <WelcomePage start={startGame}/> :
-        <QuizPage />}
+      {!isStarted ? <WelcomePage start={()=> startGame()}/> :
+        <QuizPage start={()=> startGame()}/>}
     </div>
   );
 }
