@@ -9,7 +9,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 
     font-family: 'Inter', sans-serif;
     font-style: normal;
@@ -19,13 +18,17 @@
     text-align: center;
     color: #293264;
 
-    overflow: hidden;
-
     position: absolute;
     top: 50%;
     left: 50%;
 
     transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.questions-answers{
+    overflow: auto;
+    flex-grow: 1;
 }
 
 @media screen and (max-width: 400px) {
@@ -62,7 +65,6 @@
     text-align: left;
     flex-direction: column;
     padding: 0 5%;
-
 }
 
 .checkAnswersBtn, button{

@@ -89,7 +89,7 @@ export default function QuizPage(props) {
     </div>)
   })
 
-  if (quizQuestions.length !== -1) {
+  if (quizQuestions.length === 0) {
     return <Loading/>;
   }
   else {
@@ -99,17 +99,18 @@ export default function QuizPage(props) {
         <img src={BabyBlue} alt={`blue asymmetrical shape`}/>
       </span>
 
-        <div className={`question-container`}>
-          {questions}
-        </div>
-        {showAnswers ?
-          <div className={"results"}>
-            <h3 className="score"> {`You scored ${score} / 5 correct answers.`}</h3>
-            <button className={"button"} onClick={playAgain}>Play Again</button>
+        <div className="questions-answers">
+          <div className={`question-container`}>
+            {questions}
           </div>
-          : <button className="checkAnswersBtn" disabled={!complete} onClick={checkAnswers}>Check Answers</button>
-        }
-
+          {showAnswers ?
+            <div className={"results"}>
+              <h3 className="score"> {`You scored ${score} / 5 correct answers.`}</h3>
+              <button className={"button"} onClick={playAgain}>Play Again</button>
+            </div>
+            : <button className="checkAnswersBtn" disabled={!complete} onClick={checkAnswers}>Check Answers</button>
+          }
+        </div>
         <span className="blob2">
         <img src={Yellow} alt={`blue asymmetrical shape`}/>
       </span>

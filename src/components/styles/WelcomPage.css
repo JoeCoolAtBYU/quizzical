@@ -12,14 +12,10 @@
     line-height: 19px;
     text-align: center;
     color: #293264;
-    /*border: 5px solid;*/
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    scroll-behavior: unset;
-
-    overflow: hidden;
 }
 
 
@@ -29,7 +25,7 @@
     width: 297px;
     height: 235px;
     left: -149px;
-    top: 432px;
+    top: 80%;
     right: 0;
     bottom: 0;
     z-index: -1;
@@ -38,7 +34,7 @@
     position: absolute;
     width: 297px;
     height: 235px;
-    left: 395px;
+    left: 65%;
     top: -100px;
     right: 0;
     bottom: 0;
