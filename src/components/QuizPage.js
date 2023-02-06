@@ -89,7 +89,7 @@ export default function QuizPage(props) {
     </div>)
   })
 
-  if (quizQuestions.length === 0) {
+  if (quizQuestions.length !== -1) {
     return <Loading/>;
   }
   else {

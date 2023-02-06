@@ -4,7 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    text-align:center;
 }
 
 .container .ring {
@@ -12,11 +12,18 @@
     width: 150px;
     height: 150px;
     margin: -30px;
+    left:100px;
     border-radius: 50%;
     border: 4px solid transparent;
     border-top: 4px solid #24ecff;
     animation: animate 4s linear infinite;
 }
+
+/*.container .rings{*/
+/*    position: relative;*/
+/*    right: -50px;*/
+
+/*}*/
 
 @keyframes animate {
     0% {
@@ -103,3 +110,15 @@
     0 0 20px #e41cf8,
     0 0 50px #e41cf8;
 }
+
+.title{
+    position: relative;
+    left: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+

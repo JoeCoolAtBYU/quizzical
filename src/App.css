@@ -1,14 +1,18 @@
 body{
-  margin: 0;
-  height: 100%;
-  /*overflow: hidden;*/
+  margin: 0 auto;
+  width: 90%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid blue;
 }
 
 .App{
-  display: flex;
-  align-content: center;
-  justify-content: center;
-  align-items: center;
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
   background-color: rebeccapurple;
+  color: white;
 }
 
